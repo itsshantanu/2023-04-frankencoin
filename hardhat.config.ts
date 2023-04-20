@@ -41,6 +41,9 @@ export default {
           //     blockNumber: 9664123
           // }
       },
+      buildbear:{
+      url:"https://rpc.demo.buildbear.io/Dark_Yarael_Poof_476ab950",
+      },
       localhost: {
           // exposed node of hardhat network:
           // 1. hh node --network hardhat
