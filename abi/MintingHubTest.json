@@ -139,7 +139,7 @@
         "inputs": [
             {
                 "internalType": "string",
-                "name": "msg",
+                "name": "message",
                 "type": "string"
             },
             {
