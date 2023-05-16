@@ -8,7 +8,7 @@ import { createContract } from "../scripts/utils";
 let ZCHFContract, positionFactoryContract, equityAddr, equityContract, accounts;
 let owner;
 
-describe("Basic Tests", () => {
+describe.only("Basic Tests", () => {
 
     function capitalToShares(totalCapital, totalShares, dCapital) {
         if (totalShares==0) {
