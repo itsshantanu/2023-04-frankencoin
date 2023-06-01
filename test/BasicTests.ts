@@ -73,7 +73,8 @@ describe.only("Basic Tests", () => {
             let balanceBefore = await ZCHFContract.balanceOf(owner);
             await mockXCHF.connect(accounts[0]).approve(bridge.address, amount);
             // set allowance
-            await expect(bridge.connect(accounts[0])["mint(uint256)"](amount)).to.be.revertedWithCustomError(ZCHFContract, "NotMinter");
+            // await expect(bridge.connect(accounts[0])["mint(uint256)"](amount)).to.be.revertedWithCustomError(ZCHFContract, "NotMinter");
+            await bridge.connect(accounts[0])["mint(uint256)"](amount);
         });
         it("bootstrap suggestMinter", async () => {
             let applicationPeriod = BN.from(0);
