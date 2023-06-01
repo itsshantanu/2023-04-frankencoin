@@ -8,7 +8,7 @@ import { createContract } from "../scripts/utils";
 let ZCHFContract, positionFactoryContract, equityAddr, equityContract, accounts;
 let owner;
 
-describe.only("Basic Tests", () => {
+describe("Basic Tests", () => {
 
     function capitalToShares(totalCapital, totalShares, dCapital) {
         if (totalShares==0) {
@@ -73,8 +73,7 @@ describe.only("Basic Tests", () => {
             let balanceBefore = await ZCHFContract.balanceOf(owner);
             await mockXCHF.connect(accounts[0]).approve(bridge.address, amount);
             // set allowance
-            // await expect(bridge.connect(accounts[0])["mint(uint256)"](amount)).to.be.revertedWithCustomError(ZCHFContract, "NotMinter");
-            await bridge.connect(accounts[0])["mint(uint256)"](amount);
+            await expect(bridge.connect(accounts[0])["mint(uint256)"](amount)).to.be.revertedWithCustomError(ZCHFContract, "NotMinter");
         });
         it("bootstrap suggestMinter", async () => {
             let applicationPeriod = BN.from(0);
