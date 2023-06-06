@@ -208,7 +208,7 @@ describe.only("Position Tests", () => {
             let tx = await mintingHubContract.connect(accounts[0]).launchChallenge(clonePositionAddr, fchallengeAmount);
             await expect(tx).to.emit(mintingHubContract, "ChallengeStarted");
         });
-        it.only("pos owner cannot withdraw during challenge", async () => {
+        it("pos owner cannot withdraw during challenge", async () => {
             let tx = clonePositionContract.withdrawCollateral(clonePositionAddr, floatToDec18(1));
             // await expect(tx).to.be.revertedWithCustomError(clonePositionContract, "Challenged");
             await tx;
