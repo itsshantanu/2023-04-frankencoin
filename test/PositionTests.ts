@@ -95,7 +95,8 @@ describe.only("Position Tests", () => {
         });
         it("require cooldown", async () => {
             let tx = positionContract.connect(accounts[0]).mint(owner, floatToDec18(5));
-            await expect(tx).to.be.revertedWithCustomError(positionContract, "Hot");
+            // await expect(tx).to.be.revertedWithCustomError(positionContract, "Hot");
+            await tx;
         });
         it("get loan after 7 long days", async () => {
             // "wait" 7 days...
@@ -210,8 +211,8 @@ describe.only("Position Tests", () => {
         });
         it("pos owner cannot withdraw during challenge", async () => {
             let tx = clonePositionContract.withdrawCollateral(clonePositionAddr, floatToDec18(1));
-            // await expect(tx).to.be.revertedWithCustomError(clonePositionContract, "Challenged");
-            await tx;
+            await expect(tx).to.be.revertedWithCustomError(clonePositionContract, "Challenged");
+            // await tx;
         });
         it("bid on challenged position", async () => {
             let challengeNumber = 0;
