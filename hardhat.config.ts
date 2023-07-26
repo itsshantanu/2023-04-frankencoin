@@ -6,9 +6,9 @@ import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";
 import "hardhat-abi-exporter";
 import { error } from "console";
-const config: HardhatUserConfig = {
-  solidity: "0.8.13",
-};
+// const config: HardhatUserConfig = {
+//   solidity: "0.8.13",
+// };
 
 //export default config;
 const ZERO_PK = "0x0000000000000000000000000000000000000000000000000000000000000000";
